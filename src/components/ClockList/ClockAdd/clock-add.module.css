@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    align-items: center;
+}
+
+.name-input {
+    max-width: 200px;
+}
+
+.timezoneOffset-container {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    align-items: center;
+}
+
+.timezoneOffset-input {
+    max-width: 200px;
+}
+
+.add-button-container {
+    display: flex;
+    flex-direction: column;
+    width: 33.33%;
+    justify-content: end;
+}
+
+.add-button {
+    max-width: 80px;
+}

@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.container span {
+    display: block;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    background: white;
+}
+
+.action:nth-child(n + 2) {
+    margin-left: 4px;
+}
