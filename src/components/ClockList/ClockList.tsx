@@ -15,9 +15,7 @@ export function ClockList(props: ClockListProps) {
         <>
             <ClockAdd addClock={addClock}></ClockAdd>
             <div className={styles.container}>
-                <div className={styles.content}>
-                    {clocks.map(clock => <ClockWidget clock={clock} deleteClock={deleteClock}></ClockWidget>)}
-                </div>
+                {clocks.map(clock => <ClockWidget clock={clock} deleteClock={deleteClock}></ClockWidget>)}
             </div>
         </>
     );
