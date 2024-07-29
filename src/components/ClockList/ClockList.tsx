@@ -12,7 +12,7 @@ export function ClockList(props: ClockListProps) {
     const {clocks, deleteClock} = props;
     return (
         <div className={styles.container}>
-            {clocks.map(clock => <ClockWidget clock={clock} deleteClock={deleteClock}></ClockWidget>)}
+            {clocks.map(clock => <ClockWidget key={clock.name} clock={clock} deleteClock={deleteClock}></ClockWidget>)}
         </div>
     );
 }
