@@ -1,5 +1,5 @@
 import styles from "./clock-add.module.css"
-import {Clock} from "../../../App";
+import {Clock} from "../../App";
 import {FormEvent} from "react";
 
 export type ClockAddProps = {

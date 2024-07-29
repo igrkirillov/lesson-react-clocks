@@ -1,11 +1,7 @@
 import './App.css'
 import {ClockList} from "./components/ClockList";
 import {useState} from "react";
-
-export type Clock = {
-  name: string,
-  timezoneOffset: number
-}
+import {ClockAdd} from "./components/ClockAdd";
 
 function App() {
   const [clocks, setClocks] = useState<Clock[]>([]);
@@ -24,8 +20,16 @@ function App() {
   }
 
   return (
-    <ClockList clocks={clocks} addClock={addClock} deleteClock={deleteClock}></ClockList>
-  )
+      <>
+        <ClockAdd addClock={addClock}></ClockAdd>
+        <ClockList clocks={clocks} addClock={addClock} deleteClock={deleteClock}></ClockList>
+      </>
+)
+}
+
+export type Clock = {
+  name: string,
+  timezoneOffset: number
 }
 
 export default App

@@ -1,4 +1,3 @@
-import {ClockAdd} from "./ClockAdd";
 import styles from "./clock-list.module.css"
 import {ClockWidget} from "./ClockWidget";
 import {Clock} from "../../App";
@@ -10,13 +9,10 @@ export type ClockListProps = {
 }
 
 export function ClockList(props: ClockListProps) {
-    const {clocks, addClock, deleteClock} = props;
+    const {clocks, deleteClock} = props;
     return (
-        <>
-            <ClockAdd addClock={addClock}></ClockAdd>
-            <div className={styles.container}>
-                {clocks.map(clock => <ClockWidget clock={clock} deleteClock={deleteClock}></ClockWidget>)}
-            </div>
-        </>
+        <div className={styles.container}>
+            {clocks.map(clock => <ClockWidget clock={clock} deleteClock={deleteClock}></ClockWidget>)}
+        </div>
     );
 }
