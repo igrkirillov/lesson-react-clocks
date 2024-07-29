@@ -14,18 +14,18 @@ export function ClockWidget(props: ClockWidgetProps) {
         event.preventDefault();
         deleteClock(clock);
     }
-    const ref_second = useRef<HTMLDivElement>(null);
-    const ref_minute = useRef<HTMLDivElement>(null);
-    const ref_hour = useRef<HTMLDivElement>(null);
+    const refSecond = useRef<HTMLDivElement>(null);
+    const refMinute = useRef<HTMLDivElement>(null);
+    const refHour = useRef<HTMLDivElement>(null);
     useEffect(() => {
         const currentSec = getSecondsToday(clock.timezoneOffset);
         const seconds = (currentSec / 60) % 1;
         const minutes = (currentSec / 3600) % 1;
         const hours = (currentSec / 43200) % 1;
-        setTime(60 * seconds, ref_second.current);
-        setTime(3600 * minutes, ref_minute.current);
-        setTime(43200 * hours, ref_hour.current);
-    }, []); //componentDidMount
+        setTime(60 * seconds, refSecond.current);
+        setTime(3600 * minutes, refMinute.current);
+        setTime(43200 * hours, refHour.current);
+    }, [clock.timezoneOffset]); //componentDidMount
     return (
         <div className={styles.widget}>
             <div className={styles["header-container"]}>
@@ -35,9 +35,9 @@ export function ClockWidget(props: ClockWidgetProps) {
                 </a>
             </div>
             <div className={styles.clock}>
-                <div className={styles.clock__second} ref={ref_second}></div>
-                <div className={styles.clock__minute} ref={ref_minute}></div>
-                <div className={styles.clock__hour} ref={ref_hour}></div>
+                <div className={styles.clock__second} ref={refSecond}></div>
+                <div className={styles.clock__minute} ref={refMinute}></div>
+                <div className={styles.clock__hour} ref={refHour}></div>
                 <div className={styles.clock__axis}></div>
                 <section className={styles.clock__indicator}></section>
                 <section className={styles.clock__indicator}></section>
